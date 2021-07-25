@@ -7,6 +7,8 @@ async function server(app) {
   const server = createServer(app);
   server.listen(port);
 
+  require('./api');
+
   server.on('error', onError);
 
   server.on('listening', () => {
