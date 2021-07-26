@@ -1,8 +1,11 @@
 FROM node:14-alpine
 
-WORKDIR /clinics-service
+WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
 RUN npm install
+
+COPY . .
+EXPOSE 5000
 
 CMD ["npm", "start"]
